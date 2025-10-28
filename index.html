@@ -235,6 +235,33 @@ body {
     font-size: 0.93rem;
   }
 }
+.drive-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #00d4ff, #0077ff);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+}
+
+.drive-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.6);
+  background: linear-gradient(135deg, #0077ff, #00d4ff);
+}
+
+/* Responsive size adjustments */
+@media (max-width: 480px) {
+  .drive-btn {
+    font-size: 0.9rem;
+    padding: 10px 22px;
+  }
+}
+
 
 /* Small screens - mobile landscape */
 @media (max-width: 768px) {
@@ -489,6 +516,10 @@ to strengthen my visual storytelling and overall design approach. </p>
         <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
         
         <div class="projects-container" id="projectsContainer"></div>
+        <!-- Drive Button -->
+<a href="https://drive.google.com/your-drive-link-here" target="_blank" class="drive-btn">
+  View Project Files
+</a>
     </section>
 <!-- work project section ends -->
 <!-- Experience Section -->
