@@ -15,221 +15,311 @@
     <title>Portfolio | Navjyot Naik</title>
         <style>
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
 
-        .projects {
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-        }
-
-        .heading {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #fff;
-        }
-
-        .heading i {
-            color: #00d4ff;
-            margin-right: 0.5rem;
-        }
-
-        .heading span {
-            color: #00d4ff;
-        }
-
-        .projects-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
-            border-color: rgba(0, 212, 255, 0.5);
-        }
-
-        .media-container {
-            position: relative;
-            width: 100%;
-           
-            background: #000;
-            overflow: hidden;
-        }
-
-.media-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* This will make sure the image covers the container without cutting off too much */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-        .media-slider {
-            display: flex;
-            height: 100%;
-            transition: transform 0.3s ease;
-        }
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #ffffff;
+  color: #060606;
+}
 
-        .media-item {
-            min-width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+/* ===== Projects Section ===== */
+.projects {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+}
 
-        .media-item img,
-        .media-item video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #fff;
+}
 
-        .media-controls {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 8px;
-            z-index: 10;
-        }
+.heading i {
+  color: #00d4ff;
+  margin-right: 0.5rem;
+}
 
-        .media-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
+.heading span {
+  color: #00d4ff;
+}
 
-        .media-dot.active {
-            background: #00d4ff;
-            width: 25px;
-            border-radius: 5px;
-        }
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
 
-        .nav-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            border: none;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s ease;
-            z-index: 10;
-        }
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
 
-        .nav-arrow:hover {
-            background: rgba(0, 212, 255, 0.8);
-        }
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+  border-color: rgba(0, 212, 255, 0.5);
+}
 
-        .nav-arrow.prev {
-            left: 10px;
-        }
+/* ===== Media Container ===== */
+.media-container {
+  position: relative;
+  width: 100%;
+  background: #000;
+  overflow: hidden;
+  aspect-ratio: 16/9; /* Keeps media height responsive */
+}
 
-        .nav-arrow.next {
-            right: 10px;
-        }
+.media-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-        .nav-arrow:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-        }
+.media-slider {
+  display: flex;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
 
-        .project-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
+.media-item {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-        .project-title {
-            font-size: 1.4rem;
-            color: #00d4ff;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-        }
+.media-item img,
+.media-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-        .project-description {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.8);
-            flex-grow: 1;
-        }
+/* ===== Media Controls ===== */
+.media-controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
 
-        .media-type-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(0, 212, 255, 0.9);
-            color: #000;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            z-index: 10;
-        }
+.media-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-        @media (max-width: 768px) {
-            .projects {
-                padding: 3rem 1rem;
-            }
+.media-dot.active {
+  background: #00d4ff;
+  width: 25px;
+  border-radius: 5px;
+}
 
-            .heading {
-                font-size: 2rem;
-            }
+/* ===== Navigation Arrows ===== */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+  z-index: 10;
+}
 
-            .projects-container {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
+.nav-arrow:hover {
+  background: rgba(0, 212, 255, 0.8);
+}
 
-            .media-container {
-                height: 220px;
-            }
+.nav-arrow.prev {
+  left: 10px;
+}
 
-            .project-title {
-                font-size: 1.2rem;
-            }
+.nav-arrow.next {
+  right: 10px;
+}
 
-            .project-description {
-                font-size: 0.9rem;
-            }
-        }
+.nav-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
 
-        @media (max-width: 480px) {
-            .projects {
-                padding: 2rem 0.8rem;
-            }
+/* ===== Project Content ===== */
+.project-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
 
-            .heading {
-                font-size: 1.7rem;
-            }
+.project-title {
+  font-size: 1.4rem;
+  color: #00d4ff;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
 
-            .media-container {
-                height: 200px;
-            }
-        }
+.project-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  flex-grow: 1;
+}
+
+/* ===== Media Type Badge ===== */
+.media-type-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 212, 255, 0.9);
+  color: #000;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 10;
+}
+
+/* ===== Responsive Design ===== */
+
+/* Medium screens - tablets */
+@media (max-width: 992px) {
+  .projects {
+    padding: 4rem 1.5rem;
+  }
+
+  .heading {
+    font-size: 2.2rem;
+  }
+
+  .projects-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.8rem;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+  }
+
+  .project-description {
+    font-size: 0.93rem;
+  }
+}
+
+/* Small screens - mobile landscape */
+@media (max-width: 768px) {
+  .projects {
+    padding: 3rem 1rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .media-container {
+    aspect-ratio: 4/3;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .nav-arrow {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Extra small screens - phones */
+@media (max-width: 480px) {
+  .projects {
+    padding: 2.5rem 0.8rem;
+  }
+
+  .heading {
+    font-size: 1.7rem;
+  }
+
+  .media-container {
+    aspect-ratio: 1/1; /* Makes it more square for narrow phones */
+  }
+
+  .project-title {
+    font-size: 1.1rem;
+  }
+
+  .project-description {
+    font-size: 0.88rem;
+  }
+
+  .media-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .media-dot.active {
+    width: 18px;
+  }
+}
+
+/* Ultra small devices (like foldables) */
+@media (max-width: 360px) {
+  .projects {
+    padding: 2rem 0.5rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .project-title {
+    font-size: 1rem;
+  }
+
+  .project-description {
+    font-size: 0.85rem;
+  }
+}
+
     </style>
 
 </head>
